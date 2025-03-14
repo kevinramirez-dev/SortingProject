@@ -24,7 +24,7 @@ A simple sorting web application that sorts numbers using Quick Sort, with a Spr
 🔹 Backend: Code Descriptions
 1️⃣ SortingService.java (Sorting Logic)
 
-'''
+```
 @Service
 public class SortingService {
     public int[] quickSort(int[] arr, int low, int high) {
@@ -53,6 +53,8 @@ public class SortingService {
         return i + 1;
     }
 }
+
+```
 
 🔹 API Usage
 
