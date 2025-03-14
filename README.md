@@ -79,6 +79,14 @@ python3 -m http.server 5500
 
 ```
 
+
+![Terminal](https://github.com/user-attachments/assets/5abe608f-e148-47d0-a513-3a0a6c3815cb)
+
+
+
+![Frontend](https://github.com/user-attachments/assets/6df95f34-c948-42f4-92a1-fa4e31b67729)
+
+
 🔹 Future Improvements
 
 💡 Add more sorting algorithms (Merge Sort, Bubble Sort, etc.).
