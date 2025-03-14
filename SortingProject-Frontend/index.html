@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick Sort</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f5f5f5;
+            padding: 50px;
+        }
+        h1 {
+            color: #333;
+        }
+        input {
+            width: 300px;
+            padding: 10px;
+            font-size: 16px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px;
+            margin: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            border: none;
+            background-color: #007BFF;
+            color: white;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #result {
+            font-size: 18px;
+            margin-top: 20px;
+            color: #007BFF;
+        }
+    </style>
+</head>
+<body>
+<h1>Quick Sort</h1>
+<input type="text" id="numbers" placeholder="Enter numbers (e.g., 5,3,8,2,1)">
+<button onclick="sortNumbers()">Sort</button>
+<h2 id="result"></h2>
+
+<script>
+    function sortNumbers() {
+        const input = document.getElementById("numbers").value;
+        const numbers = input.split(",").map(num => parseInt(num.trim()));
+
+        fetch("http://localhost:8080/api/sort/quick", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(numbers)
+        })
+            .then(response => response.json())
+            .then(sortedArray => {
+                document.getElementById("result").innerText = "Sorted: " + sortedArray.join(", ");
+            })
+            .catch(error => {
+                console.error("Error:", error);
+                document.getElementById("result").innerText = "Error: Could not connect to backend.";
+            });
+    }
+</script>
+</body>
+</html>
+
